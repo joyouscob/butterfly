@@ -1,0 +1,46 @@
+body, html {
+	height: 100%;
+}
+body {
+	background: #fff;
+	font-size: 15px;
+}
+
+nav.sticky {
+	left: 0;
+	top: 30px;
+	
+	background: #fff;
+	border-right: 1px solid #e7ecef;
+	
+	width: 100px;
+	padding: 10px 50px;
+}
+	nav.sticky img, nav.sticky ul {
+		margin-bottom: 30px;
+	}
+		nav.sticky a {
+			display: block;
+			
+			color: #4c5054;
+			text-decoration: none;
+		}
+			nav.sticky a:hover {
+				color: #72838e;
+			}
+			nav.sticky .active a {
+				color: #117fdf;
+			}
+		nav.sticky a.button {
+			margin-top: 60px;
+		}
+
+div.content {
+	height: 200%;
+	margin: 0 80px 0 270px;
+}
+	div.content > div {
+		height: 50%;
+		padding: 30px 0;
+		margin-bottom: -60px;
+	}

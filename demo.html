@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Butterfly UI</title>
+		
+		<link rel="stylesheet" href="butterfly/butterfly.css">
+		
+		<!-- Custom styles for the demo -->
+		<style>
+			body {
+				width: 550px;
+				margin: 90px auto;
+			}
+			
+			a.logo {
+				display: block;
+				margin-bottom: 25px;
+			}
+			
+			.section h2 {
+				padding-bottom: 25px;
+			}
+			
+			label {
+				width: 180px;
+			}
+			input, textarea {
+				width: 348px;
+			}
+			
+			.section {
+				padding: 50px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<a class="logo" href="#intro">
+			<img src="img/logo.png" alt="Butterfly UI">
+		</a>
+		
+		<h1>Butterfly Demo Page</h1>
+		<p>Butterfly aims to be as versatile as possible, so here's as many elements as possible, all jammed awkwardly in to the same page.</p>
+		<p>Enjoy!</p>
+		
+		<div class="section">
+			<h2>Form elements</h2>
+			<form>
+				<fieldset>
+					<p>
+						<label for="one">This is a label:</label>
+						<input id="one" placeholder="This is a placeholder">
+					</p>
+					
+					<p>
+						<label for="two">This is a password:</label>
+						<input type="password" id="two">
+					</p>
+					
+					<p>
+						<label for="three">This is a textarea:</label>
+						<textarea id="three"></textarea>
+					</p>
+					
+					<p>
+						<label for="four">This is a dropdown:</label>
+						<span class="fancy-select">
+							<select id="four">
+								<option selected>This is the selected option</option>
+								<option>This is another option</option>
+								<option>This is yet another option</option>
+								<option>This is a third option</option>
+								<option>And one more for luck</option>
+							</select>
+						</span>
+					</p>
+					
+					<p>
+						<label for="five">This is a checkbox:</label>
+						<input type="checkbox" id="five">
+					</p>
+					
+					<p class="on-off">
+						<label for="six">This is an on/off box:</label>
+						<input type="checkbox" checked id="six">
+					</p>
+
+					<p class="dual-input">
+						<label for="seven">This is a dual-input</label>
+						<input id="seven"><input id="seven-two">
+					</p>
+										
+					<p>
+						<label>&nbsp;</label>
+						<button type="submit">Normal submit button</button>
+						<button class="bold" type="submit">Bolder submit button</button>
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
