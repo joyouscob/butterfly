@@ -16,6 +16,10 @@
 			a.logo {
 				display: block;
 				margin-bottom: 25px;
+				
+				position: fixed;
+				left: 40px;
+				bottom: 20px;
 			}
 			
 			.section h2 {
@@ -29,7 +33,7 @@
 				width: 348px;
 			}
 			
-			.section {
+			section {
 				padding: 50px 0;
 			}
 		</style>
@@ -43,7 +47,7 @@
 		<p>Butterfly aims to be as versatile as possible, so here's as many elements as possible, all jammed awkwardly in to the same page.</p>
 		<p>Enjoy!</p>
 		
-		<div class="section">
+		<section>
 			<h2>Form elements</h2>
 			<form>
 				<fieldset>
@@ -86,17 +90,66 @@
 					</p>
 
 					<p class="dual-input">
-						<label for="seven">This is a dual-input</label>
+						<label for="seven">This is a dual-input:</label>
 						<input id="seven"><input id="seven-two">
 					</p>
-										
+
 					<p>
+						<label for="eight">Radio buttons:</label>
+						<input id="eight" type="radio">
+						<input id="eight-two" type="radio">
+					</p>
+					
+					<p>
+						<label for="nine">Range slider:</label>
+						<input id="nine" type="range">
+					</p>
+
+					<p>
+						<label for="ten">Upload field:</label>
+						<input id="ten" type="file">
+					</p>
+					
+					<p>
+						<label for="eleven">Search field + button:</label>
+						<input id="eleven" type="search">
+						<button type="submit">Search</button>
+					</p>
+
+					<p class="on-off">
+						<label for="twelve">Forbidden input:</label>
+						<input disabled type="checkbox" id="twelve">
+					</p>
+					
+					<p class="submit">
 						<label>&nbsp;</label>
 						<button type="submit">Normal submit button</button>
 						<button class="bold" type="submit">Bolder submit button</button>
 					</p>
 				</fieldset>
 			</form>
-		</div>
+		</section>
+		
+		<section>
+			<h2>Typography</h2>
+			<p>Butterfly comes built-in with a bunch of neat typography resets. You could say we're not getting with the Times.</p>
+			
+			<h1>This is a heading 1.</h1>
+			<h2>This is a heading 2.</h2>
+			<h3>This is a heading 3.</h3>
+			<h4>This is a heading 4.</h4>
+			<h5>This is a heading 5.</h5>
+			<h6>This is a heading 6.</h6>
+			
+			<p>This is some normal paragraph text. It's got a nice, easy-to-read line height, and is set in the wonderful Helvetica Neue. It's also <del>bitchin'</del> <ins>got styling</ins> for <code>inline code</code>, <b>offset text</b>, <em>emphasised speech</em>, and <abbr title="Abbreviations">abrv8tns</abbr>.</p>
+			
+			<blockquote>It was once said that a great man said this quote.</blockquote>
+			<cite>&mdash; Visual Idiot, Esq.</cite>
+			
+			<pre><code>$(function() {
+    //  Has built-in code highlighting support
+    $('pre').addClass('prettyprint');
+});</code></pre>
+		</section>
 	</body>
 </html>

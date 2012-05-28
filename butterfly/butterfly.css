@@ -103,7 +103,7 @@ input, textarea {
 	}
 
 /* Select fields */
-select, input[type=search], input[type=checkbox] {
+select, input[type=search], input[type=checkbox], input[type=range] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: normal;
@@ -159,7 +159,7 @@ select {
 	line-height: 19px;
 }
 
-button, .button, input[type=submit], select, input[type=checkbox] {
+button, .button, input[type=submit], select, input[type=checkbox], input[type=file]:after {
 	background-color: #dee3e6;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f7f8), to(#c8d0d5));
 	background-image: -webkit-linear-gradient(top, #f5f7f8, #c8d0d5);
@@ -195,7 +195,7 @@ button, .button, input[type=submit], select, input[type=checkbox] {
 		background-image: linear-gradient(top, #f8f9fa, #d4dce1);
 		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f8f9fa', EndColorStr='#d4dce1');
 	}
-	button:active, .button:active, input[type=submit]:active, select:active, .on-off input[type=checkbox] {
+	button:active, .button:active, input[type=submit]:active, select:active, .on-off input[type=checkbox], input[type=range] {
 		background-color: #dfe3e7;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#cfd6dc), to(#eff1f3));
 		background-image: -webkit-linear-gradient(top, #cfd6dc, #eff1f3);
@@ -211,7 +211,7 @@ button, .button, input[type=submit], select, input[type=checkbox] {
 	}
 	
 /* Emboldened, CTA buttons */
-button.bold, .button.bold, input[type=submit].bold, .bold, .cta, .on-off input[type=checkbox]:checked:after {
+button.bold, .button.bold, input[type=submit].bold, .bold, .cta, .on-off input[type=checkbox]:checked:after, input[type=file]:after {
 	background-color: #9ec033;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#dff155), to(#5e8f12));
 	background-image: -webkit-linear-gradient(top, #dff155, #5e8f12);
@@ -224,7 +224,7 @@ button.bold, .button.bold, input[type=submit].bold, .bold, .cta, .on-off input[t
 	color: #fff;
 	text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
-	button.bold:hover, .button.bold:hover, input[type=submit].bold:hover, .bold:hover, .cta:hover {
+	button.bold:hover, .button.bold:hover, input[type=submit].bold:hover, .bold:hover, .cta:hover, input[type=file]:hover:after {
 		background-color: #8faf27;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#daec41), to(#44720e));
 		background-image: -webkit-linear-gradient(top, #daec41, #44720e);
@@ -234,7 +234,7 @@ button.bold, .button.bold, input[type=submit].bold, .bold, .cta, .on-off input[t
 		background-image: linear-gradient(top, #daec41, #44720e);
 		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#daec41', EndColorStr='#44720e');
 	}
-	button.bold:active, .button.bold:active, input[type=submit].bold:active, .bold:active, .cta:active {
+	button.bold:active, .button.bold:active, input[type=submit].bold:active, .bold:active, .cta:active, input[type=file]:active:after {
 		background-color: #85a030;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#58791e), to(#b3c842));
 		background-image: -webkit-linear-gradient(top, #58791e, #b3c842);
@@ -275,6 +275,63 @@ input[type=checkbox] {
 	input[type=checkbox]:checked, input[type=checkbox]:checked:after {
 			opacity: 1;
 		}
+		
+input[type=range] {
+	position: relative;
+	height: 6px;
+	border: none;
+	
+	padding: 0;
+}
+	::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background: url('range.png') no-repeat 50% 50%;
+		
+		width: 16px;
+		height: 16px;
+		
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		
+		box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -2px 1px rgba(0,0,0,.1), inset 0 0 1px rgba(0,0,0,.8), 0 1px 10px rgba(255,255,255,.5);
+	}
+	
+input[type=file] {
+	border: none;
+	box-shadow: none;
+	
+	position: relative;
+	width: 90px;
+	min-width: 1px;
+	height: 32px;
+	
+	padding: 0;
+	margin: 0;
+	
+	font-weight: bold;
+	line-height: 32px;
+	
+	cursor: pointer;
+	overflow: hidden;
+}
+input[type=file]:after {
+	content: 'Upload file';
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	
+	padding: 0;
+	margin: 0;
+	
+	text-align: center;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 		
 /* Fancy-ass on/off checkbox */
 .on-off input[type=checkbox] {
@@ -327,3 +384,10 @@ input[type=checkbox] {
 			background-image: linear-gradient(top, #bdcf41, #436318);
 			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bdcf41', EndColorStr='#436318');
 		}
+		
+[disabled], :disabled {
+	opacity: .4 !important;
+	-webkit-filter: grayscale(.5);
+	
+	cursor: not-allowed;
+}
