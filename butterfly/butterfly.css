@@ -275,7 +275,8 @@ input[type=checkbox] {
 	input[type=checkbox]:checked, input[type=checkbox]:checked:after {
 			opacity: 1;
 		}
-		
+	
+/* Range sliders */	
 input[type=range] {
 	position: relative;
 	height: 6px;
@@ -297,6 +298,7 @@ input[type=range] {
 		box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -2px 1px rgba(0,0,0,.1), inset 0 0 1px rgba(0,0,0,.8), 0 1px 10px rgba(255,255,255,.5);
 	}
 	
+/* Upload fields */
 input[type=file] {
 	border: none;
 	box-shadow: none;
@@ -315,23 +317,23 @@ input[type=file] {
 	cursor: pointer;
 	overflow: hidden;
 }
-input[type=file]:after {
-	content: 'Upload file';
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	
-	padding: 0;
-	margin: 0;
-	
-	text-align: center;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
+	input[type=file]:after {
+		content: 'Upload file';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		
+		padding: 0;
+		margin: 0;
+		
+		text-align: center;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
 		
 /* Fancy-ass on/off checkbox */
 .on-off input[type=checkbox] {
@@ -384,10 +386,28 @@ input[type=file]:after {
 			background-image: linear-gradient(top, #bdcf41, #436318);
 			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bdcf41', EndColorStr='#436318');
 		}
+
+/* Automagic search fields */
+input[type=search] { }
+	input[type=search] + button, input[type=search] + input[type=submit] {
+		position: relative;
+		top: -38px;
+		right: 13px;
 		
+		float: right;
+		
+		text-indent: -99em;
+		background: url('search.png') no-repeat 50% 50%;
+		filter: none;
+		
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+/* Disabled elements */		
 [disabled], :disabled {
 	opacity: .4 !important;
 	-webkit-filter: grayscale(.5);
-	
 	cursor: not-allowed;
 }
