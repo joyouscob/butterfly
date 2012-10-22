@@ -1,0 +1,13 @@
+# mod_rewrite setting
+RewriteEngine On
+Options -MultiViews
+
+# Fix IE if we can
+# github.com/rails/rails/commit/123eb25
+<IfModule mod_headers.c>
+    Header set X-UA-Compatible "IE=Edge,chrome=1"
+
+    <FilesMatch "\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$" >
+        Header unset X-UA-Compatible
+    </FilesMatch>
+</IfModule>

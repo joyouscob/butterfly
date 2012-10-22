@@ -1,40 +1,360 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Butterfly UI</title>
-		
-		<link rel="stylesheet" href="site.css">
-		<link rel="stylesheet" href="butterfly/butterfly.css">
-		
-		<script src="//code.jquery.com/jquery-latest.min.js"></script>
-		<script src="site.js"></script>
-	</head>
-	<body>
-		<nav class="sticky">
-			<a href="#intro">
-				<img src="img/logo.png" alt="Butterfly UI">
-			</a>
-			
-			<ul class="navigation vertical">
-				<li class="active"><a href="#introduction">Introduction</a></li>
-				<li><a href="#typography">Typography</a></li>
-				<li><a href="#forms">Forms</a></li>
-				<li><a href="#navigation">Navigation</a></li>
-			</ul>
-			
-			<a class="button" href="/download">Download</a>
-		</nav>
-		
-		<div class="content">
-			<div id="intro">
-				<h1>Butterfly UI</h1>
-				<p>Butterfly is a concise, clear, cool-as-a-cucumber set of visual styles built in CSS for use with good structured markup. It&rsquo;s easy to install, and transforms a page in seconds.</p>
+    <head>
+        <meta charset="utf-8">
+        <title>Butterfly UI &mdash; Test Suite</title>
+        
+        <link rel="stylesheet" href="butterfly/butterfly.css">
+        
+        <script src="butterfly/butterfly.js"></script>
+        <script>
+            Butterfly.load(['jQuery', './butterfly/js/stickyHeader.js', './butterfly/js/validate.js'], function() {
+                Butterfly.stickyHeader();
+                Butterfly.validate('form');            
+            });
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="wrap">
+                <nav>
+                    <b class="title">
+                        <img width="28" height="17" title="Butterfly UI" alt="Butterfly UI" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAARCAYAAADOk8xKAAABxUlEQVR42rXUTUhUURjG8bcSCScEF6JpzCyEYLLchZtc6VYMqtkI5apF0EIoK4M2Spt2UQhtXGj5MauoIAwRCknFCAJLWpWYixkiRSqHK3P6B8/AYZjTJdDFb4Zzn+fel3vuzLUXs4v7IYVreI6P+I5djOz1oJN4ggiugt29GlSFQRTgsIPHOI8UGnU8+lt+iAjb+IwxXEINyGPV4hWcTKO5rJNWljftravgB26iGhZQg3n1N9Ed6J1TZ9l0+w5JpNGP93DyDscCF5pSJ4c2WMADuNKP5osWJ8pKGWwoW6sw9KKyX2iPeb7f1L1gfDzTordCuQFLyj8g4W3luo5fgf1DRr1tJExb6DAZOOEIFtS5p2MDWr/FgZi7W1H3Psy0VREKSAZOPIqcOs34Cocu5SHD6v1GClYKxhVkYQF96szo+1PMsE7vH3Ab5g9MYlPh1cAFDmIVToZgAR3YUu81DvkDS86iKNcDz+YWnHQGhvXgpzorqPfz8vINOHmK42X5aS9v8jOtR1FU/gZ1sOBAuey9DCJk0YsUGuCkDi3IYMI7p4hHOAyLHShpvIT7T3M4AwsJBnIKdzGPPJyngA3M4A5aYXH+AE+cxb+2akUfAAAAAElFTkSuQmCC">
+                    </b>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li class="active"><a href="#">Active link</a></li>
+                        <li><a href="#">Here's a final one</a></li>
+                        <li><a href="#">Done</a></li>
+                    </ul>
+                    
+                    <a class="right btn" href="#">Download</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="wrap">
+            <section class="content">
+                <h1>This is a <code>&lt;h1&gt;</code>, I think</h1>
+                <p>And this is the content to go with it. There's <mark>probably</mark> some good examples we can put it <code>in_there()</code>, but <b>here</b> is a link <a href="http://google.com">to Google</a> or something.</p>
+            </section>
+        </div>
+        
+        <div class="wrap hilite">
+            <h2>Grid System</h2>
+            
+            <div class="col12">12 column</div>
+            
+            <div class="col6">6 column</div>
+            <div class="col6">6 column</div>
+
+            <div class="col8">8 column</div>
+            <div class="col4">4 column</div>
+
+            <div class="col4">4 column</div>
+            <div class="col4">4 column</div>
+            <div class="col4">4 column</div>
+            
+            <div class="col2">2 column</div>
+            <div class="col2">2 column</div>
+            <div class="col2">2 column</div>
+            <div class="col2">2 column</div>
+            <div class="col2">2 column</div>
+            <div class="col2">2 column</div>
+            
+            <div class="col1">1</div>
+            <div class="col10">10 column</div>
+            <div class="col1">1</div>
+
+            <div class="col1">1</div>
+            <div class="col11">11 column</div>
+
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            <div class="col1">1</div>
+            
+            <div class="col5">5 column</div>
+            <div class="col3">3 column</div>
+            <div class="col4">4 column</div>
+
+            <div class="col5">5 column</div>
+            <div class="col7">7 column</div>
+
+            <div class="col1">1c</div>
+            <div class="col5">5 column</div>
+            <div class="col6">6 column</div>
+
+            <div class="col6">6 column</div>
+            <div class="col4">4 column</div>
+            <div class="col2">2 column</div>
+            
+            <div class="col2">2 column</div>
+            <div class="col8">8 column</div>
+            <div class="col2">2 column</div>
+            
+            <div class="col6 offset4">6 column, offset 4 column</div>
+            <div class="col2">2 column</div>
+        </div>
+        
+        <div class="wrap">
+            <form class="full">
+                <legend>Your information</legend>
+                
+                <p>
+                    <label for="test">
+                        Your full name
+                        
+                        <small class="help">That's your name, genius</small>
+                    </label>
+                    <input id="test" placeholder="Testing all those things">
+                </p>
+                
+                <p class="success">
+                    <label for="success-test">
+                        Your email address
+                        
+                        <small class="help">Needed if you forget your password</small>
+                    </label>
+                    <input id="success-test" placeholder="Testing all those things" value="iam@visualidiot.com">
+                    
+                    <span class="status">&#10003;</span>
+                </p>
+                
+                <p class="error">
+                    <label for="error-test">
+                        Your email address
+                        
+                        <small class="help">Needed if you forget your password</small>
+                    </label>
+                    <input id="error-test" placeholder="Testing all those things" value="document.write('fail');">
+                </p>
+                
+                <p>
+                    <label for="select">
+                        Pick an option
+                    </label>
+                    
+                    <select id="select">
+                        <option>This is the first option</option>
+                        <option>This is the second option</option>
+                        <option>This is the third option</option>
+                        <option>This is the fourth option</option>
+                        <option>This is the fifth option</option>
+                    </select>
+                </p>
+                
+                <p>
+                    <label for="bio">
+                        Your bio
+                        
+                        <small class="help">Tell us a bit about yourself</small>
+                    </label>
+                    <textarea id="bio"></textarea>
+                </p>
+                
+                <button>Submit it</button>
+                <button class="green">Kerm it</button>
+            </form>
+        </div>
+            
+        <div class="wrap">
+            <div class="content">
+                <h2>A ton of random elements</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+    					Cras id urna. Morbi tincidunt, orci ac <a href="index.html">convallis aliquam</a>, lectus turpis varius lorem, eu 
+    					posuere nunc justo tempus leo.</p>
+    			
+    					<p>
+    					Donec mattis, purus nec placerat bibendum, <a href="index.html">dui pede condimentum</a> 
+    					odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
+    					condimentum, lorem tellus eleifend magna, <a href="index.html">eget fringilla velit</a> magna id neque. Curabitur vel urna. 
+    					In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+    					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+    					posuere nunc justo tempus leo.</p>			
+    				
+    					<p class="postmeta">		
+    					<a href="index.html" class="readmore">Read more</a> |
+    					<a href="index.html" class="comments">Comments (3)</a> |				
+    					<span class="date">April 20, 2009</span>	
+    					</p>
+    			
+    			
+    			<h2><a href="index.html">Common XHTML Elements</a></h2>
+    			
+    			<h3>Text and Image</h3>
+    			
+    			<p><a href="http://getfirefox.com/"><img src="images/firefox-gray.jpg" width="100" height="120" alt="firefox" class="float-left" /></a>
+    			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+    			Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+    			posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
+    			odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
+    			condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
+    			In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+    			Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+    			posuere nunc justo tempus leo. 				
+    			</p>
+    			
+    			<p>
+             A <a href="style.html">link</a>, 
+    			<acronym title="this really isn't a very good description">acronym</acronym>, 
+    			<strong>strong text</strong> and 
+    			<del>deleted text</del>.
+             </p>
+    			
+    			<h3>Code</h3>				
+    			<p><code>
+    			code-sample { <br />
+    			font-weight: bold;<br />
+    			font-style: italic;<br />				
+    			}		
+    			</code></p>	
+    				
+    			<h3>Example Lists</h3>
+    			
+    			<ol>
+    				<li>Here is an example</li>
+    				<li>of an ordered list</li>								
+    			</ol>	
+    							
+    			<ul>
+    				<li>Here is an example</li>
+    				<li>of an unordered list</li>								
+    			</ul>			
+    			
+    			<dl>
+                <dt>Definition title</dt>
+                <dd>Definition description</dd>
+                <dt>Definition title</dt>
+                <dd>Definition description</dd>
+             </dl>	
+    			
+    			<h3>Blockquote</h3>
+    				
+    			<blockquote>
+    			<p>You can have anything in the world you want if you'll just help 
+    			enough other people get what they want.</p>
+    			</blockquote>
+    			<cite>Bob the plumber</cite>	
+    			
+    			<h3>Headers</h3>
+    						
+    			<h1>H1 Heading</h1>	
+    			<h2>H2 Heading</h2>		
+    			<h3>H3 Heading</h3>		
+    			<h4>H4 Heading</h4>						
+    				
+    			<h3>Tabular Data</h3>							
+    			<table>
+    				<tr>
+    					<th><strong>post date</strong></th>
+    					<th>title</th>
+    					<th>description</th>
+    				</tr>
+    				<tr>
+    					<td>04.18.2009</td>
+    					<td>Augue non nibh</td>
+    					<td>Commodo <a href="index.html">metus</a> vestibulum hdhdh djdjdj djdjdj</td>
+    				</tr>
+    				<tr class="altrow">
+    					<td>04.18.2009</td>
+    					<td>Fusce ut diam</td>
+    					<td>Purus in eget odio in sapien</td>
+    				</tr>
+    				<tr>
+    					<td>04.18.2009</td>
+    					<td>Augue non nibh</td>
+    					<td>Adipiscing blandit </td>
+    				</tr>
+    				<tr class="altrow">
+    					<td>04.18.2009</td>
+    					<td>Sed vestibulum</td>
+    					<td>Cras <a href="index.html">lobortis</a> commodo </td>
+    				</tr>
+    			</table>
+    			
+    			<h3>Images and Icons</h3>
+    			
+    			<figure>
+    			  <img src="http://html5doctor.com/wp-content/uploads/2010/03/macaque.jpg" alt="Macaque in the trees">
+    			  <figcaption>A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
+    			</figure>
+    			
+    								
+    			<h3>Contact Form</h3>		
+    			
+    			<form action="index.html" method="get" id="contactform">		
+    								
+    				<p>Send me a message</p>
+    			
+    				<p>
+    					<label for="subject">Subject</label><br />
+             		<select id="subject" name="subject" tabindex="1">
+               			<option value="1">Option One</option>
+              			<option value="2">Option Two</option>
+              	 		<option value="3">Option Three</option>
+             		</select>
+    				</p>	
+    			
+    				<p>	
+    					<label for="name">Your Name</label><br />
+    					<input id="name" name="name" value="Your Name" type="text" tabindex="2" />
+    				</p>
+    			
+    				<p>
+    					<label for="email">Your Email Address</label><br />
+    					<input id="email" name="email" value="Your Email" type="text" tabindex="3" />
+    				</p>
+    					
+    				<p>
+    					<label for="message">Your Message</label><br />
+    					<textarea id="message" name="message" rows="10" cols="20" tabindex="4"></textarea>
+    				</p>	
+    			
+    				<p class="no-border">
+    					<input class="button" type="submit" value="Submit" tabindex="5" />
+             		<input class="button" type="reset" value="Reset" tabindex="6" />	
+    				</p>
+    					
+    			</form>
 			</div>
-			<div id="typography">
-				<h1>Butterfly UI</h1>
-				<p>Butterfly is a concise, clear, cool-as-a-cucumber set of visual styles built in CSS for use with good structured markup. It&rsquo;s easy to install, and transforms a page in seconds.</p>
+			<div class="sidebar">
+			    <h2>This is a sidebar nav menu</h2>
+			    
+			    <ul class="vertical navigation">
+			        <li><a href="#">About Us</a></li>
+			        <li><a href="#">About The Team</a></li>
+			        <li><a href="#">About My Dog</a></li>
+			        <li><a href="#">Our Motto</a></li>
+			        <li><a href="#">Our Otter</a></li>
+			        <li><a href="#">My Sharona</a></li>
+			    </ul>
+			    
+			    <h2>Buttons!</h2>
+			    <div class="buttonMargin">
+			    <button>Normal</button><br>
+			    <button class="red">Red</button><br>
+			    <button class="green">Green</button><br>
+			    <button class="white">White</button><br>
+			    <button class="orange">Orange</button><br>
+			    <button class="pink">Pink</button><br>
+			    <button class="purple">Purple</button><br>
+			    
+			    <input type="file">
+			    </div>
+			    
+			    <style>.buttonMargin button {
+			        margin-bottom: 10px;
+			    }</style>
 			</div>
-		</div>
-	</body>
+        </div>
+    </body>
 </html>
