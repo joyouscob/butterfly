@@ -6,12 +6,10 @@
         
         <link rel="stylesheet" href="butterfly/butterfly.css">
         
+        <script src="/jquery.js"></script>
         <script src="butterfly/butterfly.js"></script>
         <script>
-            Butterfly.load(['jQuery', './butterfly/js/stickyHeader.js', './butterfly/js/validate.js'], function() {
-                Butterfly.stickyHeader();
-                Butterfly.validate('form');            
-            });
+            Butterfly.run(['jQuery', './butterfly/js/stickyHeader.js', './butterfly/js/validate.js', './butterfly/js/cooltip.js']);
         </script>
     </head>
     <body>
@@ -126,7 +124,7 @@
                     </label>
                     <input id="success-test" placeholder="Testing all those things" value="iam@visualidiot.com">
                     
-                    <span class="status">&#10003;</span>
+                    <span class="status">Lookin’ good.</span>
                 </p>
                 
                 <p class="error">
@@ -136,6 +134,8 @@
                         <small class="help">Needed if you forget your password</small>
                     </label>
                     <input id="error-test" placeholder="Testing all those things" value="document.write('fail');">
+                    
+                    <span class="status">Please enter a proper email address!</span>
                 </p>
                 
                 <p>
@@ -212,9 +212,9 @@
     			
     			<h3>Code</h3>				
     			<p><code>
-    			code-sample { <br />
-    			font-weight: bold;<br />
-    			font-style: italic;<br />				
+    			code-sample { 
+    			font-weight: bold;
+    			font-style: italic;				
     			}		
     			</code></p>	
     				
@@ -291,12 +291,10 @@
     								
     			<h3>Contact Form</h3>		
     			
-    			<form action="index.html" method="get" id="contactform">		
-    								
-    				<p>Send me a message</p>
+    			<form action="index.html" method="get" id="contactform">
     			
     				<p>
-    					<label for="subject">Subject</label><br />
+    					<label for="subject">Subject</label>
              		<select id="subject" name="subject" tabindex="1">
                			<option value="1">Option One</option>
               			<option value="2">Option Two</option>
@@ -305,17 +303,17 @@
     				</p>	
     			
     				<p>	
-    					<label for="name">Your Name</label><br />
+    					<label for="name">Your Name</label>
     					<input id="name" name="name" value="Your Name" type="text" tabindex="2" />
     				</p>
     			
     				<p>
-    					<label for="email">Your Email Address</label><br />
+    					<label for="email">Your Email Address</label>
     					<input id="email" name="email" value="Your Email" type="text" tabindex="3" />
     				</p>
     					
     				<p>
-    					<label for="message">Your Message</label><br />
+    					<label for="message">Your Message</label>
     					<textarea id="message" name="message" rows="10" cols="20" tabindex="4"></textarea>
     				</p>	
     			

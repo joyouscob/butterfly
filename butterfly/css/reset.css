@@ -64,6 +64,11 @@ p a {
     text-decoration: none;
 }
 
+acronym, abbr {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
 span.hilite, i.hilite, mark {
     padding: 2px 4px;
     border-radius: 2px;
@@ -131,6 +136,7 @@ table {
     border-spacing: 0;
     
     width: 100%;
+    margin-bottom: 25px;
 }
     th, thead td {        
         padding: 10px 15px;
@@ -188,4 +194,13 @@ dt {
         display: block;
         padding-left: 20px;
         margin-bottom: 1em;
+    }
+    
+figure {}
+    figure img {
+        max-width: 100%;
+        height: auto;
+    }
+    figcaption {
+        margin: 5px 0 25px;
     }

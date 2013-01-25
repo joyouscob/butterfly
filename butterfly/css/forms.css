@@ -5,6 +5,13 @@
  *   Typin', inputtin', it's all good.
  */
  
+form p {
+    padding-bottom: 0;
+}
+	form p:last-child > [type=submit] {
+		margin-top: 25px;
+	}
+ 
 /* Texty inputs */
 input, textarea {
     padding: 10px 14px;
@@ -31,8 +38,29 @@ input, textarea {
         outline: none;
     }
     
+select {
+    -webkit-appearance: none;
+    border: none;
+    
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 500;
+    
+    padding: 7px 20px;
+    margin-bottom: 15px;
+}
+    select:focus {
+        outline: none;
+    }
+
+input, textarea, select {
+    width: 100%;
+}
+    
 button, .btn, [type=submit], [type=reset], [type=button] {
     display: inline-block;
+    width: auto;
     padding: 10px 20px;
     margin-right: 20px; /* Multiple buttons next to each other */
     
@@ -56,14 +84,10 @@ button, .btn, [type=submit], [type=reset], [type=button] {
     form button, [type=submit], [type=reset] {
         padding: 12px 24px;
     }
-        .full button + button {
-            margin-left: 20px;
-        }
     
 label {
     display: block;
-    float: left;
-    padding: 2px 20px 8px 0;
+    padding: 4px 0 8px;
     
     line-height: 19px;
     font-weight: 500;
@@ -80,14 +104,16 @@ legend {
     font-weight: 500;
 }
 
+/**
+ *   Full-size forms
+ */
 legend, .full p {
     border-bottom: 1px solid #e5e9f0;    
 }
     .full p {
-        min-height: 50px;
+        min-height: 70px;
         margin: 30px 0 25px;
     }
-
 .full .help {
     display: block;    
     margin-top: -2px;
@@ -98,15 +124,15 @@ legend, .full p {
     font-weight: normal;
     color: #9ba5b6;
 }
-
 .full .status {
-    position: relative;
-    top: 2px;
-    
     padding-left: 20px;
-    
-    font-size: 21px;
-    line-height: 34px;
+}
+.full button + button {
+    margin-left: 20px;
+}
+.full label {
+    float: left;
+    padding: 2px 20px 8px 0;
 }
 
 /**

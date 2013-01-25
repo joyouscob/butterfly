@@ -6,6 +6,9 @@
 body, html {
     color: #65717d;
 }
+    body.dark {
+        background: #373c44;
+    }
 
 a {
     color: #1b5fa5;
@@ -40,10 +43,16 @@ span.hilite, i.hilite, mark {
 .header {
     background: #f1f3f5;
 }
+    .dark .header {
+        background: rgba(0,0,0,.1);
+    }
 
 h1 {
     color: #424b55;
 }
+    .dark :-webkit-any(h1, h2, h3, h4) {
+        color: #fff;
+    }
 h2, h3, h4 {
     color: #4c5762;
 }
@@ -69,17 +78,27 @@ nav li a {
 input, textarea {
     border: 2px solid #b9c1ce;
     color: #5f6672;
+    
+    background: transparent;
 }
     input:focus, textarea:focus {
         border-color: #97a7c3;
         background: #f3f6fc;
     }
+select {
+    background: #9cb1ca url('arrow.png') no-repeat 100% 50%;
+    border: 2px solid #7991ac;
+    color: #fff;
+}
 .success input {
     border-color: #82b01e;
     color: #6e7e4a;
 }
     .success input:focus {
         background: #fbfff3;
+    }
+    .success .status {
+        color: #82b01e;
     }
 .error input {
     border-color: #d13d29;
@@ -88,6 +107,10 @@ input, textarea {
     .error input:focus {
         background: #fff6f5;
     }
+    .error .status {
+        color: #d13d29;
+    }
+    
     
 /* Buttons! So many buttons! */
 button, .btn, [type=submit], [type=button] {
@@ -150,11 +173,11 @@ button.disabled, .btn.disabled, [type=submit][disabled] {
 }
 
 ::-webkit-file-upload-button {
-    background: #33aad6;
+    background-color: #33aad6;
     color: #fff;
 }
     ::-webkit-file-upload-button:hover {
-        background: #1e8ab2;
+        background-color: #1e8ab2;
     }
     
     

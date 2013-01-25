@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Butterfly UI &mdash; Demo login form</title>
+        
+        <link rel="stylesheet" href="../butterfly/butterfly.css">
+        
+        <script src="/jquery.js"></script>
+        <script src="../butterfly/butterfly.js"></script>
+        
+        <script>
+        	$(function() {
+        		Butterfly.load(['vertically-align']);
+        	});
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="wrap">
+                <nav>
+                    <b class="title">
+                        <img width="28" height="17" title="Butterfly UI" alt="Butterfly UI" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAARCAYAAADOk8xKAAABxUlEQVR42rXUTUhUURjG8bcSCScEF6JpzCyEYLLchZtc6VYMqtkI5apF0EIoK4M2Spt2UQhtXGj5MauoIAwRCknFCAJLWpWYixkiRSqHK3P6B8/AYZjTJdDFb4Zzn+fel3vuzLUXs4v7IYVreI6P+I5djOz1oJN4ggiugt29GlSFQRTgsIPHOI8UGnU8+lt+iAjb+IwxXEINyGPV4hWcTKO5rJNWljftravgB26iGhZQg3n1N9Ed6J1TZ9l0+w5JpNGP93DyDscCF5pSJ4c2WMADuNKP5osWJ8pKGWwoW6sw9KKyX2iPeb7f1L1gfDzTordCuQFLyj8g4W3luo5fgf1DRr1tJExb6DAZOOEIFtS5p2MDWr/FgZi7W1H3Psy0VREKSAZOPIqcOs34Cocu5SHD6v1GClYKxhVkYQF96szo+1PMsE7vH3Ab5g9MYlPh1cAFDmIVToZgAR3YUu81DvkDS86iKNcDz+YWnHQGhvXgpzorqPfz8vINOHmK42X5aS9v8jOtR1FU/gZ1sOBAuey9DCJk0YsUGuCkDi3IYMI7p4hHOAyLHShpvIT7T3M4AwsJBnIKdzGPPJyngA3M4A5aYXH+AE+cxb+2akUfAAAAAElFTkSuQmCC">
+                    </b>
+                    
+                    <a class="right btn" href="#">Sign up instead</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="wrap">
+        	<div class="col4 offset4 vertically-centered">
+        		<form>
+        			<p>
+        				<label for="username">Username:</label>
+        				<input id="username">
+        			</p>
+        			
+        			<p>
+        				<label for="username">Password:</label>
+        				<input id="password">
+        			</p>
+        			
+        			<p>
+        				<button type="submit">Log in</button>
+        			</p>
+        		</form>
+        	</div>
+        </div>
+    </body>
+</html>

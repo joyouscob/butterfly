@@ -75,6 +75,12 @@
 .left, [class*='col'], .content, .sidebar {
     float: left;
 }
+
+.vertically-centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
     
 .header {
     margin-bottom: 40px;

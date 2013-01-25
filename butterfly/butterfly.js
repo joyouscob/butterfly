@@ -7,8 +7,8 @@ Butterfly.load = function(url, done) {
         var callback = false;
         
         for(var i = 0; i < url.length; i++) {
-            if(url.length - 1 == i) {
-                callback = setTimeout(done, 150);
+            if(i + 1 == url.length) {
+                callback = done;
             }
             
             Butterfly.load(url[i], callback);
@@ -17,53 +17,35 @@ Butterfly.load = function(url, done) {
         return;
     }
     
-    url = Butterfly.libraries[url] || url;
-    
-    if(window.jQuery) {
-        return jQuery.getScript(url, done);
+    //  Add .js if it's needed
+    if(url.indexOf('.js') < 0) {
+    	url += '.js';
     }
+
+    var fullUrl = '../butterfly/js/' + url;
     
-    //  Fall back to loading manually
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
+    return jQuery.getScript(fullUrl, function() {
+    	var replaced = url.replace(/(\-[a-zA-Z])/g, function(match) {
+    		return match.toUpperCase().substr(1);
+    	});
+    	
+    	replaced = replaced.substr(0, replaced.length - 3);
+    	
+    	console.log(replaced);
+    	
+    	if(Butterfly[replaced]) {
+    		Butterfly[replaced];
+    	}
     
-    //  Set the URL
-    script.src = url;
-    
-    //  Bind callbacks
-    if(typeof done === 'function') {
-        script.onreadystatechange = done;
-        script.onload = done;
-    }
-    
-    //  And initiate the script
-    head.appendChild(script);
+    	return done.call(this);
+    });
 };
 
-//  Libraries
-Butterfly.libraries = {
-    //  prismjs.com, syntax highlighting
-    prism: '//raw.github.com/LeaVerou/prism/gh-pages/prism.js',
-    
-    //  jQuery (CDN)
-    jQuery: '//code.jquery.com/jquery-latest.min.js',
-    
-    //  Unslider
-    unslider: '//unslider.com/latest.js',
-    
-    // _.js, super handy tools
-    underscore: '//underscorejs.org/underscore-min.js',
-    
-    //  Add custom libraries
-    set: function(key, url) {
-        if(typeof key == 'object') {
-            for(var i in key) {
-                key.hasOwnProperty(i) && Butterfly.libraries.add(i, key[i]);
-            }
-            
-            return;
-        }
-        
-        return Butterfly.libraries[key] = url;
+//  Array.contains()
+Array.prototype.contains = function(wat) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i].indexOf(wat) !== -1) return true;
     }
+    
+    return false;
 };

@@ -5,7 +5,7 @@ Butterfly.stickyHeader = function(offset) {
     if(!window.$) return;
     
     var header = $('.header');
-    var height = header.height() - parseInt(offset);
+    var height = header.height() - (parseInt(offset) || 0);
     var win = $(window);
         
     //  Bind the scroll event
